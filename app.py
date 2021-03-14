@@ -63,6 +63,19 @@ def predict():
             file.save(file_path)
             prediction = model_predict(file_path, model)
             #print(prediction)
+            count=0
+            for i in range(len(prediction[0])):
+                if(prediction[0][i]==0):
+                    count+=1
+                elif(prediction[0][i]==1):
+                    break
+            if(count==0):
+                output="COVID_19"
+
+            elif(count==1):
+                output="Normal Patient"
+            else:
+                output="Pneumonia"  
             '''if(prediction[0]==0):
                 output="Cat!!"
                 pic='https://rocketpopmedia.com/wp-content/uploads/2011/12/500x300.jpeg'
