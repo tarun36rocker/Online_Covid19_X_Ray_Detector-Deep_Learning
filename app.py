@@ -71,22 +71,18 @@ def predict():
                     break
             if(count==0):
                 output="COVID_19"
-
+                pic='https://www.diagnosticcentres.in/uploads/product_image/1585835705123597-coronavirus-2.jpg'
             elif(count==1):
                 output="Normal Patient"
+                pic='https://oc-covid19.org/wp-content/uploads/2021/03/Short_long-term_future-500x300.jpg' 
             else:
                 output="Pneumonia"  
-            '''if(prediction[0]==0):
-                output="Cat!!"
-                pic='https://rocketpopmedia.com/wp-content/uploads/2011/12/500x300.jpeg'
-                
-            else:
-                output="Dog!!"
-                pic='https://www.bentonsroadvet.com.au/wp-content/uploads/2016/07/Dental%20problems-.png'''
+                pic='https://www.globaltimes.cn/Portals/0/attachment/2020/2020-01-11/d2422e61-633c-4c56-bf49-2d11325fd38d.jpeg'
+            
 
-            pic='https://rocketpopmedia.com/wp-content/uploads/2011/12/500x300.jpeg'    
+               
             #output=prediction
-            return render_template('final.html', prediction_text='Your animal is a : {}'.format(output),pic=pic)
+            return render_template('final.html', prediction_text='X-Ray Results: {}'.format(output),pic=pic)
             
 
 
