@@ -85,7 +85,7 @@ def predict():
                 pic='https://www.bentonsroadvet.com.au/wp-content/uploads/2016/07/Dental%20problems-.png'''
 
             pic='https://rocketpopmedia.com/wp-content/uploads/2011/12/500x300.jpeg'    
-            output=prediction
+            #output=prediction
             return render_template('final.html', prediction_text='Your animal is a : {}'.format(output),pic=pic)
             
 
