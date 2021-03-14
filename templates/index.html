@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Dog vs Cat Classifier</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> 
+</head>
+<style>
+  .box{
+    width:750px;
+    height:1000px;
+    padding:10px;
+    margin:100px auto;
+    box-shadow:0px 0px 10px 2px  blue;
+    border : 2px solid blue;
+    background-image:url(https://image.freepik.com/free-vector/smooth-blue-with-purple-vignette-studio-well-use-as-background_40163-62.jpg);
+    background-size:cover;
+    
+  }
+  
+</style>
+
+<body style="background-color:rgb(159, 228, 165);">
+  <div class="ui container">
+  <body style="background-color:rgb(159, 228, 165);">
+    <div class="ui top fixed huge active inverted teal menu">
+      <a class="purple item">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dog vs Cat Deep Learning Classifier</a> 
+      <div class="right menu">
+        <button class="ui  facebook icon button" onclick="window.location.href='https://www.facebook.com/'">
+          <i class="facebook icon"></i>
+      </button>
+      <button class="ui  instagram icon button" onclick="window.location.href='http://www.instagram.com'">
+        <i class="instagram icon"></i>
+    </button>
+    <button class="ui  linkedin icon button" onclick="window.location.href='http://www.linkedin.com'">
+      <i class="linkedin icon"></i>
+  </button>
+  <button class="ui youtube icon button" onclick="window.location.href='http://www.youtube.com'">
+    <i class="youtube icon"></i>
+  </button></div></div>
+  <div class="ui container">
+    <div class="ui left demo vertical inverted sidebar labeled icon menu visible teal">
+      <a class="item">
+        <i class="info circle icon" info="info"></i>
+        Information
+      </a>
+	    <a class="item" >
+        <i class="phone volume icon" id="contact"></i>
+        Contact
+      </a>
+      <a class="item" >
+        <i class="question circle icon" id="queries"></i>
+        Queires
+      </a>
+      <a class="item" >
+        <i class="print icon" id="print"></i>
+        Print Result
+      </a>
+      <a class="item" >
+        <i class="save outline icon" id="save"></i>
+        Save Result
+      </a>
+      <a class="item" >
+        <i class="calendar alternate icon" id="calender"></i>
+        Check Calender
+      </a>
+      <a class="item" >
+        <i class="linkify icon" id="copy"></i>
+        Copy Link
+      </a>
+      <a class="item" >
+        <i class="sticky note outline icon" id="sticky"></i>
+        Add Sticky Note
+      </a>
+      <a class="item" >
+        <i class="share square outline icon" id="share"></i>
+        Share Page
+      </a>
+	<script>
+        var button=document.getElementById('info');
+        button.addEventListener('click',function(){alert ("This is a CNN model which classifies the images and returns whether the image entered is a dog or a cat");});
+      </script>
+    </div>
+  </div>
+
+ 
+  
+<div class="box">
+	
+
+
+  <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="POST" enctype="multipart/form-data">
+    <div class="ui divider"></div>
+    <div class="inline field">
+    <div class="ui left corner labeled icon input">  
+    <input name="file" type="file" accept=".png, .jpg, .jpeg" placeholder="Picture" required="required"  />
+    <i class="inverted circular search link icon"></i>
+    <div class="ui left corner label">
+      <i class="asterisk icon"></i>
+    </div>
+  </div>
+    <div class="ui left pointing label">
+      Enter a picture of your cute Dog or cat to get the result !
+    </div>
+    
+    <br><br><br><br><br><br><br><br><br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <button type="submit" class="ui purple huge animated button">
+    <div class="visible content">Predict</div>
+            <div class="hidden content">
+            <i class="upload icon"></i>
+            </div></button>
+    </form>
+
+  <br>
+  <br>
+  
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
+</div>
+</body>
+</html>
